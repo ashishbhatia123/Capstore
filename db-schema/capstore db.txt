@@ -1,0 +1,207 @@
+
+Admin
+	--name
+	--mobileNo	(table)
+	--email
+	--Password
+
+individual customer detail
+	--name
+		
+	--email
+	--mobile	(primary key)
+	--password
+	--gender
+	--Dob		(class)
+	--Address-List	(class)	
+	--wishlist 	(class)
+	--cart
+	--PaymentDetails	(class)
+	--MyOrders
+
+
+
+product detail table
+	--prodId    (primary key)
+	--Name
+	--size
+	--quantity
+	--rating
+	--prod-Merchant
+	--price
+	--prod-category
+	--prod-Image (list)
+	--prod-discount 
+	--prod - coupan   (List)
+	--prod-feedback
+	
+	
+
+merchant detail
+	--merchantId		
+	--MerchantName
+	--email
+	--mobile	(primary key)
+	--password
+	--merchantaddress
+	--List of products
+	
+
+	
+transaction table
+	--TransactionId
+	--Order
+	--paymentmethod 
+	
+
+
+
+
+
+cart
+	--Cartid
+	--ProdId	(List)
+		--Quantity
+	--Subtotal
+
+wishList
+
+	--wishId
+	--ProductId 	(List)
+
+Coupan 
+	--CoupanId
+	--CoupanCode
+	--Description
+	--flagApplied 		(boolean)
+
+
+
+PaymentDetails
+	--CardHolderName
+	--cardNumber
+	--expiry-Month
+	--expiry-year
+
+
+
+	
+MyOrder
+	--MYorderId		(primary key)
+	--List of productId	
+	--purchaseDate
+	--Deliverdetail
+	--paymentOption
+	--orderstatus
+	--subtotal
+
+
+
+
+
+
+
+feedback
+
+	--feedbackId	(primaryKey)
+	--description
+	--prodId
+	--adminId
+	
+
+
+productImage
+	--url 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
