@@ -17,7 +17,7 @@ individual customer detail
 	--wishlist 	(class)
 	--cart
 	--SavedCardDetails	(class)		
-	--MyOrders
+	--MyOrders	(class)
 
 
 
@@ -51,7 +51,7 @@ merchant detail
 	
 transaction table
 	--TransactionId
-	--Order
+	--Order***
 	--paymentmethod 
 	
 
@@ -61,8 +61,8 @@ transaction table
 
 cart
 	--Cartid
-	--ProdId	(List)
-		--Quantity
+	--(hashmap(<prodId, quantity>)
+		
 	--Subtotal
 
 wishList
@@ -93,7 +93,7 @@ MyOrder
 	--purchaseDate
 	--Delivery address
 	--DeliveryDate
-	--paymentOption(mode of payment)
+	--paymentOption(mode of payment)   (class) TransactionTable
 	--orderstatus
 	--subtotal
 
