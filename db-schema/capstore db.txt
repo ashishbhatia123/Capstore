@@ -12,11 +12,11 @@ individual customer detail
 	--mobile	(primary key)
 	--password
 	--gender
-	--Dob		(class)
+	--Date(Dob)		(class)
 	--Address-List	(class)	
 	--wishlist 	(class)
 	--cart
-	--PaymentDetails	(class)
+	--SavedCardDetails	(class)		
 	--MyOrders
 
 
@@ -40,6 +40,7 @@ product detail table
 merchant detail
 	--merchantId		
 	--MerchantName
+	--MerchantType
 	--email
 	--mobile	(primary key)
 	--password
@@ -74,10 +75,10 @@ Coupan
 	--CoupanCode
 	--Description
 	--flagApplied 		(boolean)
+	--expiryDate
 
 
-
-PaymentDetails
+SavedCard/CardPayment			
 	--CardHolderName
 	--cardNumber
 	--expiry-Month
@@ -90,8 +91,9 @@ MyOrder
 	--MYorderId		(primary key)
 	--List of productId	
 	--purchaseDate
-	--Deliverdetail
-	--paymentOption
+	--Delivery address
+	--DeliveryDate
+	--paymentOption(mode of payment)
 	--orderstatus
 	--subtotal
 
@@ -117,6 +119,10 @@ productImage
 
 
 
+paymentOption(mode of payment)
+	--cashonDelivery
+	--netBanking
+	--CardPayment
 
 
 
@@ -124,10 +130,17 @@ productImage
 
 
 
-
-
-
-
+Address
+	--pincode
+	--HouseNo
+	--Area
+	--City
+	--State
+	--Landmark
+	--Name
+	--mobileNo
+	--AlternateMobileNo
+	--AddressType
 
 
 
