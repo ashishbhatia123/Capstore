@@ -1,0 +1,146 @@
+
+Admin
+	--name
+	--mobileNo	(table)
+	--email
+	--Password
+
+individual customer detail
+	--name
+		
+	--email
+	--mobile	(primary key)
+	--password
+	--gender
+	--Date(Dob)		(class)
+	--Address-List	(class)	
+	--wishlist 	(class)
+	--cart
+	--SavedCardDetails	(class)		
+	--MyOrders	(class)
+
+
+
+product detail table
+	--prodId    (primary key)
+	--Name
+	--size
+	--quantity
+	--rating		(Avg)
+	--prod-Merchant
+	--price
+	--prod-category
+	--prod-Image (list)
+	--prod-discount 
+	--prod - coupan   (List)
+	--prod-feedback		(List)
+	
+	
+
+merchant detail
+	--merchantId		
+	--MerchantName
+	--MerchantType
+	--email
+	--mobile	(primary key)
+	--password
+	--merchantaddress
+	--List of products
+	
+
+	
+transaction table
+	--TransactionId
+	--Order***
+	--paymentmethod 
+	
+
+
+
+
+
+cart
+	--Cartid
+	--(hashmap(<prodId, quantity>)
+		
+	--Subtotal
+
+wishList
+
+	--wishId
+	--ProductId 	(List)
+
+Coupan 
+	--CoupanId
+	--CoupanCode
+	--Description
+	--flagApplied 		(boolean)
+	--expiryDate
+
+
+SavedCard/CardPayment			
+	--CardHolderName
+	--cardNumber
+	--expiry-Month
+	--expiry-year
+
+
+
+	
+MyOrder
+	--MYorderId		(primary key)
+	--List of productId	
+	--purchaseDate
+	--Delivery address
+	--DeliveryDate
+	--paymentOption(mode of payment)   (class) TransactionTable
+	--orderstatus
+	--subtotal
+
+
+
+
+
+
+
+feedback
+
+	--feedbackId	(primaryKey)
+	--description
+	--prodId
+	--adminId
+				--customerMobileNo
+				--Rating
+	
+
+
+productImage
+	--url 
+
+
+
+
+
+paymentOption(mode of payment)
+	--cashonDelivery
+	--netBanking
+	--CardPayment
+
+
+
+
+
+
+
+Address
+	--pincode
+	--HouseNo
+	--Area
+	--City
+	--State
+	--Landmark
+	--Name
+	--mobileNo
+	--AlternateMobileNo
+	--AddressType
+
