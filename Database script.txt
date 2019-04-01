@@ -1,0 +1,150 @@
+CREATE TABLE admin (
+ 	mobileno varchar(10) check (regexp_like(mobileno,'^[6-9][0-9]{9}')),
+ 	name varchar(50) check (regexp_like(name,'[A-Za-z]')),  
+ 	password varchar(20) NOT NULL,
+	email varchar(70),
+	 PRIMARY KEY (mobileno)
+	) 
+
+CREATE TABLE customer (
+	mobileNo varchar(10) check (regexp_like(mobileno,'^[6-9][0-9]{9}')) NOT NULL ,
+	name varchar(50) check (regexp_like(name,'[A-Za-z]')) NOT NULL,
+	email varchar(70) UNIQUE,
+	gender varchar(6) NOT NULL,
+  	dob varchar(20),
+	wishid number(10),
+	cartid number(10),
+	sno number(10),
+	active varchar(1),
+	PRIMARY KEY (mobileNo),
+	FOREIGN KEY (wishid) REFERENCES MyWishList(wishid),
+	FOREIGN KEY (sno) REFERENCES savedCard_master(sno),
+	FOREIGN KEY (cartid) REFERENCES MyCart(cartid)
+	);
+
+CREATE TABLE address (
+ 	mobileNo varchar(10) check (regexp_like(mobileno,'^[6-9][0-9]{9}')) NOT NULL, 
+	houseNo varchar(10),  	
+  	area varchar(20),
+	city varchar(20),
+	pincode varchar(6) NOT NULL,
+	state varchar(30),
+	landmark varchar(50),
+	name varchar(50),
+	alternate_mob varchar(10),
+	addressType varchar(10),
+	FOREIGN KEY (mobileNo) REFERENCES customer(mobileNo),
+	PRIMARY KEY (mobileNo)
+	);
+
+CREATE TABLE coupon (
+ 	couponId number(10) NOT NULL,
+ 	couponCode varchar(6) NOT NULL, 	
+ 	description varchar(50) NOT NULL,
+ 	expiryDate date NOT NULL,
+ 	applied varchar(1),
+	prodid number(10),	
+	FOREIGN KEY (prodid) REFERENCES product(prodid),
+	PRIMARY KEY (couponId)
+	);
+
+
+CREATE TABLE feedback (
+ 	feedId number(10) NOT NULL,
+ 	Desc_d varchar(50) NOT NULL,
+ 	prodid number(10) NOT NULL,
+	prodid number(10),
+	FOREIGN KEY (prodid) REFERENCES product(prodid),
+	 PRIMARY KEY (feedId)
+	);
+	
+CREATE TABLE merchant (
+	merid number(10) NOT NULL ,
+	merName varchar(50) NOT NULL,
+	email varchar(70) NOT NULL UNIQUE,
+	password varchar(20) NOT NULL,
+  	mobile varchar(10) NOT NULL UNIQUE,
+ 	merType  varchar(255) NOT NULL,
+ 	merchantAddress varchar(255) ,
+	products varchar(255) NOT NULL	,
+	prodid number(10) ,
+	FOREIGN KEY (prodid) REFERENCES product(prodid),
+	PRIMARY KEY (merid)
+	); 
+
+CREATE TABLE product (
+ 	prodid number(10) NOT NULL ,
+ 	name varchar(70) NOT NULL UNIQUE,
+ 	Size_s varchar(5)  ,
+ 	quantity number(5) NOT NULL,
+	price number(6,2),
+ 	rating number(5,2),
+	prodCategory varchar(50),
+	discount number(5,2),	
+	prodImages raw(255),
+	prodCoupon raw(255),
+	prodFeedback raw(255),
+	merchant_merid number(10),
+	MyWishList_wishid number(10),
+	MyOrders_orderId number(10),
+	FOREIGN KEY (merchant_merid) REFERENCES merchant(merid),
+	FOREIGN KEY (MyWishList_wishid) REFERENCES MyWishList(wishid),
+	FOREIGN KEY (MyOrders_orderid) REFERENCES MyOrders(orderId),
+	PRIMARY KEY (prodid)
+	);
+
+
+CREATE TABLE mycart (
+ 	cartId number(10) NOT NULL,
+	Order_o raw(255),	
+	PRIMARY KEY (cartId)
+	); 
+
+CREATE TABLE MyWishList (
+ 	wishid number(10) NOT NULL ,
+ 	product raw(255),
+	PRIMARY KEY (wishid)
+	); 
+
+CREATE TABLE MyOrders (
+ 	orderId number(10) NOT NULL,
+	product raw(255),
+	purchaseDate date,
+        deliveryAddress raw(255),
+	DeliveryDate date,
+	invoice raw(255),
+	status varchar(20),
+	subtotal  number(10,2),
+	cart raw(255),
+	customerOrd raw(255),
+  	custMobileNo varchar(10), 
+	PRIMARY KEY (orderId),
+	FOREIGN KEY (custMobileNo) REFERENCES customer(mobileNo)
+	);
+
+CREATE TABLE images(
+	sno number(10) NOT NULL,
+	url varchar(255),
+ 	productImg raw(255),
+	product_prodid number(10),
+	PRIMARY KEY (sno),
+	FOREIGN KEY (product_prodid) REFERENCES product(prodid)
+	);
+
+
+CREATE TABLE invoice (
+ 	invoiceId number(10) NOT NULL ,
+	methods varchar(20),
+	tranId number(20) ,
+	PRIMARY KEY (invoiceId)
+	);
+ 
+CREATE TABLE savedCard_master(
+	sno number(10),
+	card_holder_name varchar(50),
+	cardno number(16),
+	expirymon number(2),
+	expiry_year number(4),
+	PRIMARY KEY (sno)
+);
+
