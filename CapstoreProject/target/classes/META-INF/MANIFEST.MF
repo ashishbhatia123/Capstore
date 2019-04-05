@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: CapstoreProject
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Ashish Bhatia
+Implementation-Vendor-Id: com.cg.capstore
+Build-Jdk: 1.8.0_112
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/CapstoreProject
+Created-By: Maven Integration for Eclipse
+
